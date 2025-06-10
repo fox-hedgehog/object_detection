@@ -53,7 +53,7 @@ def preprocess_image(image_path: str) -> Tuple[np.ndarray, Tuple[int, int]]:
 def postprocess_detections(
     model_output: np.ndarray,
     original_shape: Tuple[int, int],
-    confidence_threshold: float = 0.1,
+    confidence_threshold: float = 0.05,
     nms_threshold: float = 0.5,
 ) -> List[Dict[str, int]]:
     """
@@ -62,7 +62,7 @@ def postprocess_detections(
     Args:
         model_output (np.ndarray): 模型输出的检测结果
         original_shape (Tuple[int, int]): 原始图像的尺寸 (height, width)
-        confidence_threshold (float): 置信度阈值，默认0.1
+        confidence_threshold (float): 置信度阈值，默认0.05
         nms_threshold (float): NMS的IoU阈值，默认0.5
 
     Returns:
